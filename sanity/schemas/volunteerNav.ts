@@ -6,7 +6,6 @@ export const volunteerNav = defineType({
   title: "Volunteer Nav",
   type: "document",
   fields: [
-    orderRankField({ type: "volunteerNav", newItemPosition: "before" }),
     defineField({
       name: "volunteerNavItems",
       title: "Volunteer Nav Items",
@@ -19,7 +18,7 @@ export const volunteerNav = defineType({
           type: "object",
           fields: [
             defineField({
-              name: "name",
+              name: "title",
               title: "Page Name",
               type: "string",
               validation: (rule) => rule.required(),
@@ -30,7 +29,7 @@ export const volunteerNav = defineType({
               type: "slug",
               validation: (rule) => rule.required(),
               options: {
-                source: "name",
+                source: (doc, { parent }) => parent.title,
                 maxLength: 200,
                 slugify: (input) =>
                   input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),

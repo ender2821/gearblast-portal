@@ -1,5 +1,5 @@
 {
-  "name": "gearblast-portal",
+  "name": "my-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,29 +9,35 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
-    "@mui/material": "^5.16.4",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.16.1",
+    "@mui/material": "^5.16.1",
     "@portabletext/react": "^3.1.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/orderable-document-list": "^1.2.1",
-    "@sanity/vision": "^3.52.1",
-    "@types/nodemailer": "^6.4.15",
-    "next": "14.2.5",
-    "next-sanity": "^9.4.2",
+    "@sanity/vision": "^3.44.0",
+    "@types/gtag.js": "^0.0.20",
+    "next": "14.2.3",
+    "next-sanity": "^9.3.10",
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
-    "sanity": "^3.52.1",
-    "styled-components": "^6.1.12"
+    "react-player": "^2.16.0",
+    "react-responsive": "^10.0.0",
+    "sanity": "^3.44.0",
+    "sanity-plugin-singleton-tools": "^1.0.1",
+    "styled-components": "^6.1.11"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.15",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "eslint-config-next": "14.2.3",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"

@@ -1,15 +1,17 @@
-export default function Footer() {
+import Link from "next/link";
+import React from "react";
+
+const Footer = () => {
   return (
-    <footer className="flex items-center justify-center w-full h-24 border-t">
-      <a
-        className="flex items-center justify-center"
-        href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Powered by{" "}
-        <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-      </a>
+    <footer className="lgMax:peer-has-[:checked]:hidden text-center p-6 mt-6 bg-black/60">
+      <p className="m-0">
+        <Link href="mailto:usa@gearblast.com" className="underline">
+          usa@gearblast.com
+        </Link>{" "}
+        | © {new Date().getFullYear()} Gearblast:US. All rights reserved.
+      </p>
     </footer>
   );
-}
+};
+
+export default Footer;
