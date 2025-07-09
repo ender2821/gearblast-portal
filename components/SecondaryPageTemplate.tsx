@@ -25,7 +25,7 @@ export default async function SecondaryPageTemplate({
   return (
     <main className="min-h-screen flex-col md:pl-24 md:pt-24 md:pr-24 pb-24 grid grid-cols-1 smDesktop:grid-cols-3 lg:grid-cols-2 gap-y-4 md:gap-4 lgMax:peer-has-[:checked]:fixed">
       <section className="bg-black/20 backdrop-blur-sm pl-8 pt-8 pr-8 pb-8 relative flex justify-center overflow-hidden pageContent">
-        <div className="max-w-[600px] z-10 relative">
+        <div className="w-full z-10 relative">
           <h1 className={`${notoSerifDisplay.className} text-6xl font-bold`}>
             {pageData?.heroTitle}
           </h1>
@@ -55,6 +55,14 @@ export default async function SecondaryPageTemplate({
                 key={video?.title ? video?.title + i : i}
               />
             ))}
+          <div className="relative overflow-hidden w-full pt-[56.25%]">
+            <iframe
+              frameborder="0"
+              scrolling="no"
+              className="absolute top-0 left-0 bottom-0 right-0 w-full h-full"
+              src="https://1drv.ms/x/c/05e9a456f5860aca/IQTKCob1VqTpIIAFCmgAAAAAATcVtCMvtaKNPAN-8KJhjlA?wdAllowInteractivity=False&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+            ></iframe>
+          </div>
         </div>
         <div className="aspect-square w-full absolute bottom-0 left-0 mt-auto flex justify-center items-center z-0">
           <Flower className="text-[#2B2D3B] w-[60%] h-[60%]" />
