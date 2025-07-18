@@ -8,6 +8,10 @@ import Link from "next/link";
 import VideoPlayer from "./VideoPlayer";
 import LoadingSpinner from "./LoadingSpinner";
 import GalleryData from "./GalleryData";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const notoSerifDisplay = Noto_Serif_Display({ subsets: ["latin"] });
 
@@ -68,6 +72,47 @@ export default async function SecondaryPageTemplate({
             </div>
           )}
           <h2>Frequently Asked Questions</h2>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="faq-panel1-content"
+              id="faq-panel1-header"
+            >
+              <span className="font-semibold">What is GearBlast?</span>
+            </AccordionSummary>
+            <AccordionDetails>
+              GearBlast is a portal for managing and sharing resources, files,
+              and information for our community.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="faq-panel2-content"
+              id="faq-panel2-header"
+            >
+              <span className="font-semibold">
+                How do I edit the spreadsheet?
+              </span>
+            </AccordionSummary>
+            <AccordionDetails>
+              Click the &quot;Edit Spreadsheet&quot; button above to open and
+              edit the shared spreadsheet in OneDrive.
+            </AccordionDetails>
+          </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="faq-panel3-content"
+              id="faq-panel3-header"
+            >
+              <span className="font-semibold">Who can upload files?</span>
+            </AccordionSummary>
+            <AccordionDetails>
+              Only authorized users can upload files. Please contact an admin
+              for access.
+            </AccordionDetails>
+          </Accordion>
         </div>
       </section>
       <section className="relative">
