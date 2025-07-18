@@ -29,7 +29,29 @@ export default async function SecondaryPageTemplate({
           <h1 className={`text-6xl font-bold`}>{pageData?.heroTitle}</h1>
           <h2 className="text-2xl font-semibold">{pageData?.heroSubtitle}</h2>
           <Divider />
+          <a
+            href="https://1drv.ms/x/c/05e9a456f5860aca/EcoKhvVWpOkggAUKaAAAAAAB4kVYg5NHWWtTeZygdO49oQ?e=uwCism"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" bg-[#f44336] inline-block relative left-1/2 -translate-x-1/2 mb-8 text-black font-semibold px-4 py-2 rounded shadow hover:text-black hover:no-underline hover:bg-[#d32f2f] transition"
+          >
+            Edit Spreadsheet
+          </a>
+          <div className="relative overflow-hidden w-full pt-[56.25%]">
+            <iframe
+              className="absolute top-0 left-0 bottom-0 right-0 w-full h-full"
+              src="https://1drv.ms/x/c/05e9a456f5860aca/IQTKCob1VqTpIIAFCmgAAAAAATcVtCMvtaKNPAN-8KJhjlA?wdInConfigurator=True&wdInConfigurator=True"
+            ></iframe>
+          </div>
           {pageData?.content && <PortableText value={pageData?.content} />}
+          {pageData?.videos &&
+            pageData?.videos.map((video, i) => (
+              <VideoPlayer
+                videoLink={video?.videoLink}
+                title={video?.title}
+                key={video?.title ? video?.title + i : i}
+              />
+            ))}
           {pageData?.files && (
             <div className="grid grid-cols-3 mt-12 gap-2">
               {pageData?.files.map((file, i) => (
@@ -45,28 +67,7 @@ export default async function SecondaryPageTemplate({
               ))}
             </div>
           )}
-          {pageData?.videos &&
-            pageData?.videos.map((video, i) => (
-              <VideoPlayer
-                videoLink={video?.videoLink}
-                title={video?.title}
-                key={video?.title ? video?.title + i : i}
-              />
-            ))}
-          <a
-            href="https://1drv.ms/x/c/05e9a456f5860aca/EcoKhvVWpOkggAUKaAAAAAAB4kVYg5NHWWtTeZygdO49oQ?e=uwCism"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" bg-[#f44336] inline-block text-black font-semibold px-4 py-2 rounded shadow hover:bg-[#d32f2f] transition"
-          >
-            Edit Spreadsheet
-          </a>
-          <div className="relative overflow-hidden w-full pt-[56.25%]">
-            <iframe
-              className="absolute top-0 left-0 bottom-0 right-0 w-full h-full"
-              src="https://1drv.ms/x/c/05e9a456f5860aca/IQTKCob1VqTpIIAFCmgAAAAAATcVtCMvtaKNPAN-8KJhjlA?wdInConfigurator=True&wdInConfigurator=True"
-            ></iframe>
-          </div>
+          <h2>Frequently Asked Questions</h2>
         </div>
       </section>
       <section className="relative">

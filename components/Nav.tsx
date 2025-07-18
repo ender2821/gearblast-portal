@@ -4,6 +4,7 @@ import Link from "next/link";
 import React from "react";
 import Menu from "@/public/menu.svg";
 import Close from "@/public/close.svg";
+import CogLogo from "@/public/cog-logo.svg";
 
 const navQuery = groq`
   *[_type == "volunteerPage"]{
@@ -54,15 +55,18 @@ export default async function Nav() {
       <nav className="w-[100vw] lg:w-full absolute lg:left-0 -left-[100vw] lg:top-0 smDesktop:pl-24 smDesktop:pr-24 bg-[#131313] lgMax:backdrop-blur-xl z-20 lgMax:peer-[:checked]:left-0">
         <ul className="lg:flex">
           <li>
-            <Link href="/" className="pt-4 pr-8 pb-4 pl-8 block">
-              Home
+            <Link
+              href="/"
+              className="pt-2 pr-8 pb-2 pl-8 w-full h-14 flex items-center hover:bg-[#000] focus:bg-[#000] transition-colors"
+            >
+              <CogLogo className="w-full h-full" />
             </Link>
           </li>
           {navQueryData.map((item: NavItem, i: number) => (
-            <li key={item?.name + i} className="lg:[&>a]:last:pb-6">
+            <li key={item?.name + i}>
               <Link
                 href={`/${item?.slug?.current}`}
-                className="pt-4 pr-8 pb-4 pl-8 block"
+                className="pt-4 pr-8 pb-4 pl-8 flex items-center hover:bg-[#000] focus:bg-[#000] transition-colors"
               >
                 {item?.name}
               </Link>
