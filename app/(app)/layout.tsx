@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
-const notoSans = Noto_Sans({ weight: "400", subsets: ["latin"] });
+const sora = Sora({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Gearblast Portal",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={notoSans.className}>
+      <body className={sora.className}>
         {children}
         <Footer />
       </body>

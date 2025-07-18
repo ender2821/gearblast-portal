@@ -72,11 +72,7 @@ export default async function Home() {
         <section className="grid grid-cols-1 md:grid-cols-3 pageContent">
           <div className="bg-black/20 backdrop-blur-sm md:pl-8 p-8 md:col-span-2 min-h-[800px] relative flex justify-center">
             <div className="max-w-[600px]">
-              <h1
-                className={`${notoSerifDisplay.className} text-6xl font-bold`}
-              >
-                {homeData?.heroTitle}
-              </h1>
+              <h1 className={`text-6xl font-bold`}>{homeData?.heroTitle}</h1>
               <h2 className="text-2xl font-semibold">
                 {homeData?.heroSubtitle}
               </h2>

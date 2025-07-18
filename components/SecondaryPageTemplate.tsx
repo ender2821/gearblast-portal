@@ -23,12 +23,10 @@ export default async function SecondaryPageTemplate({
   slug,
 }: Props) {
   return (
-    <main className="min-h-screen flex-col md:pl-24 md:pt-24 md:pr-24 pb-24 grid grid-cols-1 smDesktop:grid-cols-3 lg:grid-cols-2 gap-y-4 md:gap-4 lgMax:peer-has-[:checked]:fixed">
-      <section className="bg-black/20 backdrop-blur-sm pl-8 pt-8 pr-8 pb-8 relative flex justify-center overflow-hidden pageContent">
+    <main className="min-h-screen flex-col md:pl-24 md:pt-24 md:pr-24 pb-24 grid grid-cols-1 smDesktop:grid-cols-2 lg:grid-cols-2 gap-y-4 md:gap-4 lgMax:peer-has-[:checked]:fixed">
+      <section className="bg-[#131313] pl-8 pt-8 pr-8 pb-8 relative flex justify-center overflow-hidden pageContent">
         <div className="w-full z-10 relative">
-          <h1 className={`${notoSerifDisplay.className} text-6xl font-bold`}>
-            {pageData?.heroTitle}
-          </h1>
+          <h1 className={`text-6xl font-bold`}>{pageData?.heroTitle}</h1>
           <h2 className="text-2xl font-semibold">{pageData?.heroSubtitle}</h2>
           <Divider />
           {pageData?.content && <PortableText value={pageData?.content} />}
@@ -39,7 +37,7 @@ export default async function SecondaryPageTemplate({
                   href={file?.fileUrl}
                   key={file?.name ? file?.name + i : i}
                   target="_blank"
-                  className="border-[1px] text-center p-2 flex flex-wrap justify-center items-center [&>svg]:hover:text-[#27D5E8] [&>svg]:focus:text-[#27D5E8] border-[#5f6368] hover:border-[#27D5E8] focus:border-[#27D5E8] text-[#5f6368] hover:text-[#27D5E8] focus:text-[#27D5E8]"
+                  className="border-[1px] text-center p-2 flex flex-wrap justify-center items-center [&>svg]:hover:text-[#f44336] [&>svg]:focus:text-[#f44336] border-[#5f6368] hover:border-[#f44336] focus:border-[#f44336] text-[#5f6368] hover:text-[#f44336] focus:text-[#f44336]"
                 >
                   <File className="w-full h-12 text-[#5f6368]" />
                   {file?.name}
@@ -55,20 +53,23 @@ export default async function SecondaryPageTemplate({
                 key={video?.title ? video?.title + i : i}
               />
             ))}
+          <a
+            href="https://1drv.ms/x/c/05e9a456f5860aca/EcoKhvVWpOkggAUKaAAAAAAB4kVYg5NHWWtTeZygdO49oQ?e=uwCism"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" bg-[#f44336] inline-block text-black font-semibold px-4 py-2 rounded shadow hover:bg-[#d32f2f] transition"
+          >
+            Edit Spreadsheet
+          </a>
           <div className="relative overflow-hidden w-full pt-[56.25%]">
             <iframe
-              frameborder="0"
-              scrolling="no"
               className="absolute top-0 left-0 bottom-0 right-0 w-full h-full"
-              src="https://1drv.ms/x/c/05e9a456f5860aca/IQTKCob1VqTpIIAFCmgAAAAAATcVtCMvtaKNPAN-8KJhjlA?wdAllowInteractivity=False&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+              src="https://1drv.ms/x/c/05e9a456f5860aca/IQTKCob1VqTpIIAFCmgAAAAAATcVtCMvtaKNPAN-8KJhjlA?wdInConfigurator=True&wdInConfigurator=True"
             ></iframe>
           </div>
         </div>
-        <div className="aspect-square w-full absolute bottom-0 left-0 mt-auto flex justify-center items-center z-0">
-          <Flower className="text-[#2B2D3B] w-[60%] h-[60%]" />
-        </div>
       </section>
-      <section className="smDesktop:col-span-2 relative">
+      <section className="relative">
         <Suspense fallback={<LoadingSpinner />}>
           <GalleryData query={galleryQuery} slug={slug} />
         </Suspense>

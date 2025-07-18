@@ -24,9 +24,9 @@ export default async function HomeImage() {
   );
 
   const frame = {
-    border: "1rem solid #27D5E8",
+    border: "1rem solid #f44336",
     borderImage:
-      "repeating-linear-gradient(45deg, transparent, transparent 5px, #27D5E8 6px, #27D5E8 15px, transparent 16px, transparent 20px) 20/1rem",
+      "repeating-linear-gradient(45deg, transparent, transparent 5px, #f44336 6px, #f44336 15px, transparent 16px, transparent 20px) 20/1rem",
   };
 
   return (
