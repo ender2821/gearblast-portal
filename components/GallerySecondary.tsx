@@ -15,5 +15,5 @@ type Data = {
 export default function GallerySecondary(props: Data) {
   const isSmallScreen = useMediaQuery({ query: "(max-width: 1200px)" });
 
-  return <Gallery data={props.data} columns={isSmallScreen ? 3 : 4} />;
+  return <Gallery data={props.data} columns={2} />;
 }
