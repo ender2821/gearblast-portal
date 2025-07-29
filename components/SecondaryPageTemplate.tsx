@@ -75,16 +75,47 @@ export default async function SecondaryPageTemplate({
             <>
               <h2>Frequently Asked Questions</h2>
               {pageData?.faq?.map((item, i) => (
-                <Accordion key={i}>
+                <Accordion
+                  key={i}
+                  sx={{
+                    backgroundColor: "#131313",
+                    border: "1px solid #fff",
+                    color: "#fff",
+                    marginBottom: "8px",
+                    "&:before": {
+                      display: "none",
+                    },
+                    "&.Mui-expanded": {
+                      margin: "0 0 8px 0",
+                    },
+                  }}
+                >
                   <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
                     aria-controls={`faq-panel${i + 1}-content`}
                     id={`faq-panel${i + 1}-header`}
+                    sx={{
+                      backgroundColor: "#131313",
+                      color: "#fff",
+                      "&:hover": {
+                        backgroundColor: "#1a1a1a",
+                      },
+                    }}
                   >
-                    <span className="font-semibold">{item?.faqQuestion}</span>
+                    <span className="font-semibold text-white">
+                      {item?.faqQuestion}
+                    </span>
                   </AccordionSummary>
-                  <AccordionDetails>
-                    <PortableText value={item?.faqAnswer} />
+                  <AccordionDetails
+                    sx={{
+                      backgroundColor: "#131313",
+                      color: "#fff",
+                      borderTop: "1px solid #fff",
+                    }}
+                  >
+                    <div className="text-white">
+                      <PortableText value={item?.faqAnswer} />
+                    </div>
                   </AccordionDetails>
                 </Accordion>
               ))}
