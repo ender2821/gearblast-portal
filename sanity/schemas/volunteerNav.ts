@@ -1,4 +1,3 @@
-import { orderRankField } from "@sanity/orderable-document-list";
 import { defineField, defineType } from "sanity";
 
 export const volunteerNav = defineType({
@@ -29,7 +28,7 @@ export const volunteerNav = defineType({
               type: "slug",
               validation: (rule) => rule.required(),
               options: {
-                source: (doc, { parent }) => parent.title,
+                source: "title",
                 maxLength: 200,
                 slugify: (input) =>
                   input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
