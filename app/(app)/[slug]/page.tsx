@@ -25,6 +25,7 @@ const RelatedWorkQuery = groq`
     spreadsheetShareLink,
     spreadsheetEmbedLink,
     content,
+    faq,
     files[]->{
       "fileUrl": fileUpload.asset->url,
       name

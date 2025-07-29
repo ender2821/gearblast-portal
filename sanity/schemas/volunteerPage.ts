@@ -61,6 +61,33 @@ export const volunteerPage = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: "faq",
+      title: "FAQ",
+      type: "array",
+      of: [
+        defineField({
+          name: "faqItem",
+          title: "FAQ Item",
+          type: "object",
+          fields: [
+            defineField({
+              name: "faqQuestion",
+              title: "FAQ Question",
+              type: "string",
+              validation: (rule) => rule.required(),
+            }),
+            defineField({
+              name: "faqAnswer",
+              title: "FAQ Answer",
+              type: "array",
+              of: [{ type: "block" }],
+              validation: (rule) => rule.required(),
+            }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
       name: "gallery",
       title: "Gallery",
       type: "array",

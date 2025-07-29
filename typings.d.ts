@@ -21,12 +21,20 @@ type Gallery = {
   ];
 };
 
+type FAQ = [
+  {
+    faqQuestion: string;
+    faqAnswer: Block[];
+  },
+]
+
 type SecondaryPageData = {
   heroTitle: string;
   heroSubtitle?: string;
   spreadsheetShareLink?: string;
   spreadsheetEmbedLink?: string;
   content: Block[];
+  faq?: FAQ;
   files: [
     {
       fileUrl: string;
