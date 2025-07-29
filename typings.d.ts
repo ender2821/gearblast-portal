@@ -24,6 +24,8 @@ type Gallery = {
 type SecondaryPageData = {
   heroTitle: string;
   heroSubtitle?: string;
+  spreadsheetShareLink?: string;
+  spreadsheetEmbedLink?: string;
   content: Block[];
   files: [
     {

@@ -44,6 +44,16 @@ export const volunteerPage = defineType({
       type: "string",
     }),
     defineField({
+      name: "spreadsheetShareLink",
+      title: "Spreadsheet Share Link",
+      type: "url",
+    }),
+    defineField({
+      name: "spreadsheetEmbedLink",
+      title: "Spreadsheet Embed Link",
+      type: "url",
+    }),
+    defineField({
       name: "content",
       title: "Content",
       type: "array",

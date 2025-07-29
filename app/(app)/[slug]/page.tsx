@@ -22,6 +22,8 @@ const RelatedWorkQuery = groq`
   *[_type == "volunteerPage" && slug.current == $slug][0]{
     heroTitle,
     heroSubtitle,
+    spreadsheetShareLink,
+    spreadsheetEmbedLink,
     content,
     files[]->{
       "fileUrl": fileUpload.asset->url,

@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import { Noto_Serif_Display } from "next/font/google";
 import { PortableText } from "next-sanity";
-import Flower from "../public/flower.svg";
 import File from "../public/file.svg";
 import Divider from "./Divider";
 import Link from "next/link";
@@ -33,20 +32,24 @@ export default async function SecondaryPageTemplate({
           <h1 className={`text-6xl font-bold`}>{pageData?.heroTitle}</h1>
           <h2 className="text-2xl font-semibold">{pageData?.heroSubtitle}</h2>
           <Divider />
-          <a
-            href="https://1drv.ms/x/c/05e9a456f5860aca/EcoKhvVWpOkggAUKaAAAAAAB4kVYg5NHWWtTeZygdO49oQ?e=uwCism"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=" bg-[#f44336] inline-block relative left-1/2 -translate-x-1/2 mb-8 text-black font-semibold px-4 py-2 rounded shadow hover:text-black hover:no-underline hover:bg-[#d32f2f] transition"
-          >
-            Edit Spreadsheet
-          </a>
-          <div className="relative overflow-hidden w-full pt-[56.25%]">
-            <iframe
-              className="absolute top-0 left-0 bottom-0 right-0 w-full h-full"
-              src="https://1drv.ms/x/c/05e9a456f5860aca/IQTKCob1VqTpIIAFCmgAAAAAATcVtCMvtaKNPAN-8KJhjlA?wdInConfigurator=True&wdInConfigurator=True"
-            ></iframe>
-          </div>
+          {pageData?.spreadsheetShareLink && (
+            <a
+              href={pageData?.spreadsheetShareLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" bg-[#f44336] inline-block relative left-1/2 -translate-x-1/2 mb-8 text-black font-semibold px-4 py-2 rounded shadow hover:text-black hover:no-underline hover:bg-[#d32f2f] transition"
+            >
+              Edit Spreadsheet
+            </a>
+          )}
+          {pageData?.spreadsheetEmbedLink && (
+            <div className="relative overflow-hidden w-full pt-[56.25%]">
+              <iframe
+                className="absolute top-0 left-0 bottom-0 right-0 w-full h-full"
+                src={pageData?.spreadsheetEmbedLink}
+              ></iframe>
+            </div>
+          )}
           {pageData?.content && <PortableText value={pageData?.content} />}
           {pageData?.videos &&
             pageData?.videos.map((video, i) => (
