@@ -17,20 +17,6 @@ type Gallery = {
   columns: number;
 };
 
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  bgcolor: "#000",
-  border: "1px solid #000",
-  boxShadow: 24,
-  p: 4,
-  minHeight: "90vh",
-  minWidth: "90vw",
-  outline: "none",
-};
-
 export default function Gallery(props: Gallery) {
   const { data, columns } = props;
   const [open, setOpen] = useState(false);
@@ -44,6 +30,20 @@ export default function Gallery(props: Gallery) {
 
   const lastImage = data ? data.length - 1 : null;
 
+  const getModalStyle = () => ({
+    position: "absolute" as "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    bgcolor: "#000",
+    border: "1px solid #000",
+    boxShadow: 24,
+    p: 4,
+    minHeight: { xs: "100vh", md: "90vh" },
+    minWidth: { xs: "100vw", md: "90vw" },
+    outline: "none",
+  });
+
   return (
     <>
       {data ? (
@@ -54,7 +54,7 @@ export default function Gallery(props: Gallery) {
             aria-labelledby="gallery-modal-title"
             aria-describedby="gallery-modal-description"
           >
-            <Box sx={style}>
+            <Box sx={getModalStyle()}>
               {modalImage !== 0 ? (
                 <button
                   className="bg-black z-10 absolute w-8 h-8 top-1/2 -translate-y-1/2 left-8 cursor-pointer"

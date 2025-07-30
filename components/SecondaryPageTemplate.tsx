@@ -24,7 +24,7 @@ export default async function SecondaryPageTemplate({
 }: Props) {
   return (
     <main className="min-h-screen flex-col md:pl-24 md:pt-24 md:pr-24 pb-24 grid grid-cols-1 smDesktop:grid-cols-2 lg:grid-cols-2 gap-y-4 md:gap-4 lgMax:peer-has-[:checked]:fixed">
-      <section className="bg-[#131313] pl-8 pt-8 pr-8 pb-8 relative flex justify-center overflow-hidden pageContent">
+      <section className="bg-[#131313] mt-16 lg:mt-0 pl-8 pt-8 pr-8 pb-8 relative flex justify-center overflow-hidden pageContent">
         <div className="w-full z-10 relative">
           <h1 className={`text-6xl font-bold`}>{pageData?.heroTitle}</h1>
           <h2 className="text-2xl font-semibold">{pageData?.heroSubtitle}</h2>
@@ -40,7 +40,7 @@ export default async function SecondaryPageTemplate({
             </a>
           )}
           {pageData?.spreadsheetEmbedLink && (
-            <div className="relative overflow-hidden w-full pt-[56.25%]">
+            <div className="relative overflow-hidden w-full pt-[56.25%] mb-8">
               <iframe
                 className="absolute top-0 left-0 bottom-0 right-0 w-full h-full"
                 src={pageData?.spreadsheetEmbedLink}
@@ -57,7 +57,7 @@ export default async function SecondaryPageTemplate({
               />
             ))}
           {pageData?.files && (
-            <div className="grid grid-cols-3 mt-12 gap-2">
+            <div className="grid grid-cols-3 mt-12 gap-2 mb-8">
               {pageData?.files.map((file, i) => (
                 <Link
                   href={file?.fileUrl}
