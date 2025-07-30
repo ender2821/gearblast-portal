@@ -40,7 +40,7 @@ export default async function SecondaryPageTemplate({
             </a>
           )}
           {pageData?.spreadsheetEmbedLink && (
-            <div className="relative overflow-hidden w-full pt-[56.25%] mb-8">
+            <div className="relative overflow-hidden w-full pt-[150%] lg:pt-[76.25%] mb-8">
               <iframe
                 className="absolute top-0 left-0 bottom-0 right-0 w-full h-full"
                 src={pageData?.spreadsheetEmbedLink}
