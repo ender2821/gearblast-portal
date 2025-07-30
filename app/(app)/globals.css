@@ -2,6 +2,203 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    font-size: 2.125rem; /* text-4xl for mobile */
+    font-weight: 700; /* font-bold */
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 1.25rem; /* text-xl for mobile */
+    font-weight: 600; /* font-semibold */
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.125rem; /* text-lg for mobile */
+    font-weight: 600; /* font-semibold */
+    line-height: 1.75rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1rem; /* text-base for mobile */
+    font-weight: 600; /* font-semibold */
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  h5 {
+    font-size: 0.875rem; /* text-sm for mobile */
+    font-weight: 600; /* font-semibold */
+    line-height: 1.25rem;
+    margin-bottom: 0.25rem;
+    margin-top: 0.75rem;
+  }
+
+  h6 {
+    font-size: 0.75rem; /* text-xs for mobile */
+    font-weight: 600; /* font-semibold */
+    line-height: 1rem;
+    margin-bottom: 0.25rem;
+    margin-top: 0.5rem;
+  }
+
+  blockquote {
+    border-left: 4px solid #f44336;
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(244, 67, 54, 0.05));
+    padding: 1.5rem 1.25rem 1.5rem 2rem;
+    margin: 2rem 0;
+    font-style: italic;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    position: relative;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  blockquote::before {
+    content: '"';
+    font-size: 4rem;
+    color: #f44336;
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    font-family: Georgia, serif;
+    opacity: 0.3;
+  }
+
+  blockquote p {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  blockquote cite {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    font-size: 0.875rem;
+    color: #ccc;
+  }
+
+  blockquote cite::before {
+    content: '— ';
+  }
+
+  br {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3rem; /* text-5xl for tablet */
+      line-height: 3rem;
+    }
+
+    h2 {
+      font-size: 1.375rem; /* Between xl and 2xl for tablet */
+      line-height: 1.875rem;
+    }
+
+    h3 {
+      font-size: 1.25rem; /* text-xl for tablet */
+      line-height: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    h4 {
+      font-size: 1.125rem; /* text-lg for tablet */
+      line-height: 1.75rem;
+      margin-top: 1.25rem;
+    }
+
+    h5 {
+      font-size: 1rem; /* text-base for tablet */
+      line-height: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    h6 {
+      font-size: 0.875rem; /* text-sm for tablet */
+      line-height: 1.25rem;
+      margin-top: 0.75rem;
+    }
+
+    blockquote {
+      padding: 2rem 1.5rem 2rem 2.5rem;
+      margin: 2.5rem 0;
+      font-size: 1.25rem;
+      line-height: 1.8;
+    }
+
+    blockquote::before {
+      font-size: 5rem;
+      top: -0.75rem;
+      left: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 3.75rem; /* text-6xl for desktop */
+      line-height: 1;
+    }
+
+    h2 {
+      font-size: 1.5rem; /* text-2xl for desktop */
+      line-height: 2rem;
+    }
+
+    h3 {
+      font-size: 1.4rem; /* Custom size for desktop */
+      line-height: 2rem;
+      margin-top: 2.4rem;
+    }
+
+    h4 {
+      font-size: 1.25rem; /* text-xl for desktop */
+      line-height: 1.75rem;
+      margin-top: 1.5rem;
+    }
+
+    h5 {
+      font-size: 1.125rem; /* text-lg for desktop */
+      line-height: 1.75rem;
+      margin-top: 1.25rem;
+    }
+
+    h6 {
+      font-size: 1rem; /* text-base for desktop */
+      line-height: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    blockquote {
+      padding: 2.5rem 2rem 2.5rem 3rem;
+      margin: 3rem 0;
+      font-size: 1.375rem;
+      line-height: 1.8;
+      border-radius: 0 12px 12px 0;
+    }
+
+    blockquote::before {
+      font-size: 6rem;
+      top: -1rem;
+      left: 1.5rem;
+    }
+
+    blockquote cite {
+      font-size: 1rem;
+    }
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -24,22 +221,6 @@ body {
   background: #000;
   color: #fff;
   min-height: 100vh;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  margin-bottom: 0.2rem;
-  margin-top: 2.4rem;
-  font-size: 1.4rem;
 }
 
 p {
@@ -74,6 +255,42 @@ p:empty {
   list-style: decimal;
   margin-bottom: 1rem;
   margin-left: 1rem;
+}
+
+.pageContent a {
+  color: #ff7961; /* Light red for better visibility in content */
+  transition: color 125ms ease;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 121, 97, 0.5); /* Semi-transparent underline */
+}
+
+.pageContent a:hover {
+  color: #f44336; /* Your existing red hover color */
+  text-decoration: underline;
+  text-decoration-color: #f44336; /* Solid underline on hover */
+}
+
+/* Override for button-style links - keep them white */
+.pageContent a[class*="bg-"], 
+.pageContent a.inline-block,
+.pageContent button a,
+a.bg-\[,
+a[class*="px-"],
+a[class*="py-"],
+a[class*="rounded"] {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.pageContent a[class*="bg-"]:hover, 
+.pageContent a.inline-block:hover,
+.pageContent button a:hover,
+a.bg-\[:hover,
+a[class*="px-"]:hover,
+a[class*="py-"]:hover,
+a[class*="rounded"]:hover {
+  color: #000 !important;
+  text-decoration: none !important;
 }
 
 @layer utilities {
