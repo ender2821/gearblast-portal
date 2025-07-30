@@ -52,7 +52,7 @@ export default async function Nav() {
       >
         <Close className="w-[50%] h-[50%]" />
       </label>
-      <nav className="w-[100vw] lg:w-full absolute lg:left-0 -left-[100vw] lg:top-0 smDesktop:pl-24 smDesktop:pr-24 lgMax:backdrop-blur-xl z-20 lgMax:peer-[:checked]:left-0">
+      <nav className="w-[100vw] lg:w-full absolute lg:left-0 -left-[100vw] lg:top-0 smDesktop:pl-24 smDesktop:pr-24 bg-[#131313] lgMax:backdrop-blur-xl z-20 lgMax:peer-[:checked]:left-0">
         <ul className="lg:flex">
           <li>
             <Link
