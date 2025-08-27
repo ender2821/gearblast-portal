@@ -8,7 +8,7 @@ const Footer = () => {
         <Link href="mailto:usa@gearblast.com" className="underline">
           usa@gearblast.com
         </Link>{" "}
-        | © {new Date().getFullYear()} Gearblast, a non-profit organization.
+        | © {new Date().getFullYear()} GearBlast, a non-profit organization.
         All rights reserved.
       </p>
     </footer>
